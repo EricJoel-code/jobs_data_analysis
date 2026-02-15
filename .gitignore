@@ -1,0 +1,9 @@
+venv/
+__pycache__/
+*.pyc
+
+# Database files
+jobs.db
+
+# Raw data files
+jobs_raw_table.csv
