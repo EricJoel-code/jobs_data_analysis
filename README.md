@@ -26,6 +26,7 @@ Este proyecto tiene como objetivo recopilar información de empleos del mundo te
 
 El proyecto está desarrollado en **Python**, utilizando un entorno virtual (`venv`) para aislar dependencias.
 
+---
 
 ## 📂 Estructura del Proyecto
 
