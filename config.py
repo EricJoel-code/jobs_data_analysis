@@ -10,3 +10,6 @@ JOB_GROUP_DICT = job_group_df.set_index('keyword')['category'].to_dict()
 
 # Finalmente, definimos una lista de palabras clave que se utilizarán para identificar trabajos remotos en la función de categorización de trabajos.
 REMOTE_KEYWORDS = ['remote', 'hybrid', 'on site']
+
+states_df = pd.read_excel('master_data/states.xlsx')
+STATES_DICT = states_df.set_index('State')['Code'].to_dict()

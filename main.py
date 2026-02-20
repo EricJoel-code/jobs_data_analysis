@@ -26,7 +26,7 @@ def main():
     
     df_processed = datacleaner.clean_data_jobs(df)
     
-    df_processed.to_sql('jobs_cleaned_table', conn, if_exists = 'append', index=False)
+    df_processed.to_sql('jobs_cleaned_table', conn, if_exists = 'replace', index=False)
     
     conn.close()
     

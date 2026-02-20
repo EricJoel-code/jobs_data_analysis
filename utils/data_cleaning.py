@@ -1,5 +1,6 @@
 import re
 from utils.job_categorization import JobsCategorization
+from utils.location_processing import LocationProcessor
 
 # Esta clase se encarga de limpiar los datos obtenidos del scraper, eliminando duplicados, filas con valores nulos en la descripción y filas con id vacíos. Además, rellena los valores nulos en la columna de ubicación con una cadena vacía.
 class DataCleaning:
@@ -19,9 +20,12 @@ class DataCleaning:
         # Categorizar los trabajos utilizando la clase JobsCategorization
         categorizer = JobsCategorization()
         
-        df['job_level'] = df['title'].apply(categorizer.job_level)
+        df['level'] = df['title'].apply(categorizer.job_level)
         df['job_group'] = df['title'].apply(categorizer.job_group)
         df['remote'] = df.apply(categorizer.remote_jobs, axis=1)
         df['remote'] = df.apply(categorizer.check_is_remote, axis=1)
+        
+        locationer = LocationProcessor()
+        df = locationer.city_state(df)
         
         return df
