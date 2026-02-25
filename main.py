@@ -26,7 +26,10 @@ def main():
     
     df_processed = datacleaner.clean_data_jobs(df)
     
-    df_processed.to_sql('jobs_cleaned_table', conn, if_exists = 'replace', index=False)
+    # Seleccionamos solo las columnas relevantes para la tabla final que se guardará en la base de datos. Esto es importante para evitar guardar información innecesaria y mantener la base de datos limpia y eficiente.
+    df_processed_sql = df_processed[['id','site','job_url','job_url_direct','title','company','date_posted','level','job_group','remote','city','state','country','city_state','max_salary','min_salary','mean_salary','skills','experience','education','programming_languages','languages']]
+    
+    df_processed_sql.to_sql('jobs_cleaned_table', conn, if_exists = 'replace', index=False)
     
     conn.close()
     
