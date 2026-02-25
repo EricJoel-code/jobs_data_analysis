@@ -39,6 +39,8 @@ tech-jobs-data-analysis/
 │   └── data_cleaning.py         # Lógica de limpieza de datos
 │   └── jobs_categorization.py   # Lógica para la categorización de datos en función de su título, descripción y ubicación(remoto, hibrido, presencial)
 │   └── location_processing.py   # Lógica que se encarga de procesar y categorizar la información de ubicación de los trabajos(ciudad, estado, país)
+│   └── salary_cleaning.py       # Lógica que se encarga de procesar los salarios obtenidos del scraper
+│   └── skills_extraction.py     # Lógica que se encarga de extraer las habilidades mencionadas en las descripciones de los trabajos, así como el nivel de educación más alto mencionado y la experiencia requerida
 │   └── scraper.py               # Lógica de extracción de datos
 ├── main.py                # Punto de entrada del proyecto
 ├── config.py              # Configuraciones globales del proyecto
@@ -113,13 +115,13 @@ El flujo general del proyecto incluye:
 
 ## 🔮 Mejoras Futuras
 
-* Integración con base de datos (PostgreSQL / MongoDB).
-* Visualización interactiva con Streamlit o Dash.
-* Automatización del scraping (cron jobs).
-* Implementación de análisis predictivo.
-* Exportación de reportes en CSV / Excel / PDF.
-* Dockerización del proyecto.
-* Tests automatizados.
+* [x] Exportación de reportes en CSV / Excel / PDF.
+* [ ] Integración con base de datos (PostgreSQL / MongoDB).
+* [ ] Visualización interactiva con Streamlit o Dash.
+* [ ] Automatización del scraping (cron jobs).
+* [ ] Implementación de análisis predictivo.
+* [ ] Dockerización del proyecto.
+* [ ] Tests automatizados.
 
 ---
 
